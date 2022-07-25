@@ -66,11 +66,12 @@ if base_=='RSB':
     ckpt_name = "suimnet_rsb5.hdf5"
 else: 
     im_res_ = (320, 256, 3)
-    ckpt_name = "suimnet_vgg5.hdf5"
+    # ckpt_name = "suimnet_vgg5.hdf5"
+    ckpt_name = "suimnet_vgg_100.hdf5"
 suimnet = SUIM_Net(base=base_, im_res=im_res_, n_classes=5)
 model = suimnet.model
 # print (model.summary())
-model.load_weights(join(HOME_TO_USE, "ckpt/", ckpt_name))
+model.load_weights(os.path.join(HOME_TO_USE, "ckpt/", ckpt_name))
 
 
 im_h, im_w = im_res_[1], im_res_[0]

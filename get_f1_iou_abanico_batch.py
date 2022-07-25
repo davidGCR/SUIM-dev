@@ -38,6 +38,8 @@ def read_and_bin(im_path):
 Ps, Rs, F1s, IoUs = [], [], [], []
 gen_paths = sorted(getPaths(HOME_TO_USE, gen_mask_dir))
 real_paths = sorted(getPaths(HOME_TO_USE, real_mask_dir))
+print('gen_paths: ', gen_paths)
+
 # for gen_p, real_p in zip(gen_paths, real_paths):
 #     gen, real = read_and_bin(gen_p), read_and_bin(real_p)
 #     if (np.sum(real)>0):
