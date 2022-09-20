@@ -5,6 +5,8 @@ cd /content/
 echo "===> Creating folders..."
 mkdir /content/DATA
 mkdir /content/DATA/DataSet_ConchasAbanico
+mkdir /content/DATA/DataSet_ConchasAbanico/data
+mkdir /content/DATA/DataSet_ConchasAbanico/data/test
 
 echo "===> Downloading ABANICO dataset"
 id="1qJpTORrTuCETMWg3FBJeCaCrn8IVrBDh"
