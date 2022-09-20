@@ -5,8 +5,11 @@ cd /content/
 echo "===> Creating folders..."
 mkdir /content/DATA
 mkdir /content/DATA/DataSet_ConchasAbanico
+mkdir /content/drive/MyDrive/DATA
+mkdir /content/drive/MyDrive/DATA/DataSet_ConchasAbanico
 mkdir /content/drive/MyDrive/DATA/DataSet_ConchasAbanico/data
 mkdir /content/drive/MyDrive/DATA/DataSet_ConchasAbanico/data/test
+mkdir /content/drive/MyDrive/DATA/DataSet_ConchasAbanico/data/test/images
 
 echo "===> Downloading ABANICO dataset"
 id="1qJpTORrTuCETMWg3FBJeCaCrn8IVrBDh"
@@ -30,5 +33,5 @@ dst="/content/drive/MyDrive/DATA/DataSet_ConchasAbanico/data/test/"
 mv $src ${dst}
 
 echo "===> Unzipping ${filename}"
-unzip -q "/content/drive/MyDrive/DATA/DataSet_ConchasAbanico/data/test/${filename}" -d dst
+unzip -q "/content/drive/MyDrive/DATA/DataSet_ConchasAbanico/data/test/${filename}" -d "/content/drive/MyDrive/DATA/DataSet_ConchasAbanico/data/test/images"
 rm "/content/drive/MyDrive/DATA/DataSet_ConchasAbanico/data/test/${filename}"
