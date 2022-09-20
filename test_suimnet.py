@@ -53,6 +53,7 @@ elif DATASET == "DataSet_ConchasAbanico":
     CAR_dir = samples_dir + "CAR/"
     CAN_dir = samples_dir + "CAN/" 
     if not exists(samples_dir): os.makedirs(samples_dir)
+    if not exists(test_dir): os.makedirs(test_dir)
     if not exists(CAB_dir): os.makedirs(CAB_dir)
     if not exists(VCA_dir): os.makedirs(VCA_dir)
     if not exists(VPP_dir): os.makedirs(VPP_dir)
@@ -66,8 +67,8 @@ if base_=='RSB':
     ckpt_name = "suimnet_rsb5.hdf5"
 else: 
     im_res_ = (320, 256, 3)
-    # ckpt_name = "suimnet_vgg5.hdf5"
-    ckpt_name = "suimnet_vgg_100.hdf5"
+    ckpt_name = "suimnet_vgg.hdf5"
+    # ckpt_name = "suimnet_vgg_100.hdf5"
 suimnet = SUIM_Net(base=base_, im_res=im_res_, n_classes=5)
 model = suimnet.model
 # print (model.summary())
@@ -86,7 +87,7 @@ def testGenerator():
         img = np.expand_dims(img, axis=0)
         # inference
         out_img = model.predict(img)
-        print('Out_img size: ', out_img.shape)
+        # print('Out_img size: ', out_img.shape)
         # thresholding
         out_img[out_img>0.5] = 1.
         out_img[out_img<=0.5] = 0.
