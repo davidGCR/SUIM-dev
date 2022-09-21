@@ -167,4 +167,10 @@ class SUIM_Net():
 if __name__=="__main__":
     suim_net = SUIM_Net('VGG', im_res=(320, 256, 3))
     print (suim_net.model.summary())
+    input = tf.random.Generator.from_seed(123)
+    input = input.normal(shape=(1, 256, 320, 3))
+    output = suim_net.model.predict(input)
+    print('output: ', type(output))
+    print('output: ', output.shape)
+
 
