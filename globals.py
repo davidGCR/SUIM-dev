@@ -3,4 +3,4 @@
 # VPP: Valva de pico de pato
 # CAR: Caracol
 # CAN: Cangrejo
-CLASSES = ["CAB", "BCA", "VPP", "CAR", "CAN"]
+CLASSES = ["CAB", "VCA", "VPP", "CAR", "CAN"]

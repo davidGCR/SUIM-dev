@@ -78,7 +78,7 @@ def read_and_bin(im_path):
 
 def compute_metrics(plot_roc=False):
     aps = []
-    for obj_cat in categories:
+    for obj_cat in CLASSES:
         real_mask_dir   = os.path.join(test_dir_process, obj_cat) # real labels
         gen_mask_dir    = os.path.join(HOME_TO_USE, "data/test/output", obj_cat) if HOME_TO_USE==HOME_COLAB_DRIVE else os.path.join(HOME_TO_USE, "TEST/output", obj_cat)# generated labels
         # accumulate F1/iou values in the lists
