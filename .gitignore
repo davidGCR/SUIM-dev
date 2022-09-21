@@ -3,3 +3,4 @@
 ckpt/saved/
 tmp/
 *.bmp
+*.pyc

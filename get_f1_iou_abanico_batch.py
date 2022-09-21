@@ -10,7 +10,7 @@ import os
 from utils.data_utils import getPaths
 from utils.measure_utils import db_eval_boundary, IoU_bin
 from globals import CLASSES
-# from abanico_data_exploration import count_by_class
+from abanico_data_exploration import count_by_class
 import matplotlib.pyplot as plt
 
 DATASET             = 'DataSet_ConchasAbanico' #['SUIM', 'DataSet_ConchasAbanico']
@@ -84,11 +84,11 @@ print("IoUs: ", IoUs, len(IoUs))
 print ("Avg. F: {0}".format(100.0*np.mean(F1s)))
 print ("Avg. IoU: {0}".format(100.0*np.mean(IoUs)))
 
-# precisions, recalls = AP(IoUs, threshold=0.5, clase='CAB')
-# plt.plot(recalls, precisions, linewidth=4, color="red")
-# plt.xlabel("Recall", fontsize=12, fontweight='bold')
-# plt.ylabel("Precision", fontsize=12, fontweight='bold')
-# plt.title("Precision-Recall Curve", fontsize=15, fontweight="bold")
-# plt.show()
+precisions, recalls = AP(IoUs, threshold=0.5, clase='CAB')
+plt.plot(recalls, precisions, linewidth=4, color="red")
+plt.xlabel("Recall", fontsize=12, fontweight='bold')
+plt.ylabel("Precision", fontsize=12, fontweight='bold')
+plt.title("Precision-Recall Curve", fontsize=15, fontweight="bold")
+plt.show()
     
 
