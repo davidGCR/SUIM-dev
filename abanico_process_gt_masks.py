@@ -18,7 +18,7 @@ HOME_LOCAL_DATASET_WIN  = 'C:/Users/David/Desktop/DATASETS/{}'.format(DATASET)
 HOME_TO_USE             = HOME_LOCAL_DATASET_WIN
 
 masks_dir = os.path.join(HOME_TO_USE, "TEST/masks/")
-masks_process_dir = os.path.join(HOME_TO_USE, "TEST/masks_process/" )
+masks_process_dir = os.path.join(HOME_TO_USE, "TEST/masks_process2/" )
     
 CAB_dir = masks_process_dir + "CAB/"
 VCA_dir = masks_process_dir + "VCA/"
@@ -98,11 +98,11 @@ def mask_2_classes(mask_paths):
         VPP = np.reshape(mask[:,:,3], (im_h, im_w))
         CAR = np.reshape(mask[:,:,4], (im_h, im_w))
         CAN = np.reshape(mask[:,:,5], (im_h, im_w))
-        Image.fromarray(np.uint8(CAB*255.)).save(CAB_dir+img_name + '.bmp')
-        Image.fromarray(np.uint8(VCA*255.)).save(VCA_dir+img_name + '.bmp')
-        Image.fromarray(np.uint8(VPP*255.)).save(VPP_dir+img_name + '.bmp')
-        Image.fromarray(np.uint8(CAR*255.)).save(CAR_dir+img_name + '.bmp')
-        Image.fromarray(np.uint8(CAN*255.)).save(CAN_dir+img_name + '.bmp')
+        # Image.fromarray(np.uint8(CAB*255.)).save(CAB_dir+img_name + '.bmp')
+        # Image.fromarray(np.uint8(VCA*255.)).save(VCA_dir+img_name + '.bmp')
+        # Image.fromarray(np.uint8(VPP*255.)).save(VPP_dir+img_name + '.bmp')
+        # Image.fromarray(np.uint8(CAR*255.)).save(CAR_dir+img_name + '.bmp')
+        # Image.fromarray(np.uint8(CAN*255.)).save(CAN_dir+img_name + '.bmp')
 
 if __name__ == "__main__":
     mask_2_classes(mask_paths)
