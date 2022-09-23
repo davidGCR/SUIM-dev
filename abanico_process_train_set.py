@@ -14,11 +14,11 @@ import cv2
 from globals import CLASSES
 
 DATASET                 = 'DataSet_ConchasAbanico' #['SUIM', 'DataSet_ConchasAbanico']
-HOME_COLAB_DRIVE        = '/content/drive/MyDrive/DATA/{}'.format(DATASET)
+HOME_COLAB_DRIVE        = '/content/DATA/{}'.format(DATASET)
 HOME_LOCAL              = ''
 HOME_LOCAL_DATASET_WIN  = 'C:/Users/David/Desktop/DATASETS/{}'.format(DATASET)
-HOME_TO_USE             = HOME_LOCAL_DATASET_WIN
-
+HOME_TO_USE             = HOME_COLAB_DRIVE
+print('HOME_TO_USE: ', HOME_TO_USE)
 images_dir = os.path.join(HOME_TO_USE, "train_val/images/")
 # masks_process_dir = os.path.join(HOME_TO_USE, "TEST/masks_process2/" )
 masks_dir = os.path.join(HOME_TO_USE, "train_val/masks/")
@@ -63,13 +63,14 @@ mask_names = getFileNames(mask_paths)
 
 images_without_masks = [im for im in images_names if im not in mask_names]
 
-print('----images: \n', images_names)
-print('----masks: \n', mask_names)
+# print('----images: \n', images_names)
+# print('----masks: \n', mask_names)
 print('----images_without_masks: \n', images_without_masks)
 
 w,h = 320, 240
 img = np.zeros((h,w,3),dtype=np.uint8)
 for im in images_without_masks:
+    print('Creating Zero mask for: ', im)
     Image.fromarray(img).convert("RGB").save("{}.png".format(masks_dir+im))
 
 
